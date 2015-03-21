@@ -1,0 +1,16 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "default_locale": "en",
+   "description": "__MSG_chrome_extension_description__",
+   "icons": {
+      "128": "images/ico/icon128.png",
+      "16": "images/ico/icon16.png",
+      "48": "images/ico/icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "VK Image Share",
+   "permissions": [ "contextMenus", "tabs", "storage", "http://*/*", "https://*/*" ],
+   "version": "1.0"
+}

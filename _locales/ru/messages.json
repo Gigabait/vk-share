@@ -1,0 +1,44 @@
+{
+   "chrome_extension_description": {
+      "message": "Позволяет отправлять изображения с помощью сообщений ВКонтакте"
+   },
+   "context_menu_item_title": {
+      "message": "Отправить в ВКонтакте"
+   },
+   "error_message_title": {
+      "message": "О, нет! Произошла какая-то ошибка... :("
+   },
+   "lang": {
+      "message": "ru"
+   },
+   "nav_bar_tab1_text": {
+      "message": "Друзья"
+   },
+   "nav_bar_tab2_text": {
+      "message": "Диалоги"
+   },
+   "not_found": {
+      "message": "Не найдено"
+   },
+   "search_input_placeholder": {
+      "message": "Начните вводить имя друга"
+   },
+   "upload_dialogs_loader_text": {
+      "message": "Загрузка диалогов..."
+   },
+   "upload_friends_loader_text": {
+      "message": "Загрузка списка друзей..."
+   },
+   "upload_image_loader_text": {
+      "message": "Загрузка изображения..."
+   },
+   "upload_page_title": {
+      "message": "Отправка изображения с помощью сообщения ВКонтакте"
+   },
+   "upload_send_button_title": {
+      "message": "Отправить"
+   },
+   "upload_send_text_title": {
+      "message": "Введите текст сообщения"
+   }
+}

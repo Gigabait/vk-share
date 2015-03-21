@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VK Image Sender</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript" src="upload.js"></script>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+			::-webkit-scrollbar {
+				width: 3px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background: #D3D3D3;
+			}
+
+			body {
+				background: #ffffff no-repeat center center;
+    			background-size: cover;
+    			/*background-image: url('https://40.media.tumblr.com/8929342d0a5a9f019fbb533b1c5e80bd/tumblr_nlkcu66myz1rye1gyo1_500.png');*/
+			}
+
+			.col_photo {
+				max-width: 44px;
+			}
+
+			.list_table td {
+				height: 60px;
+				display: table-cell;
+    			vertical-align: middle;
+    			background-color: #fff !important;
+			}
+
+			.list_table tr {
+				cursor: pointer;
+				border-right: 0px;
+				border-left: 0px;
+				-webkit-user-select: none;
+				padding-right: 0px;
+			}
+
+			.list_table td:first-child {
+				width: 60px;
+				padding: 2px;
+			}
+
+			.list_table td:nth-child(2) {
+				overflow: hidden;
+				padding-left: 4px;
+				padding-right: 2px;
+			}
+
+			.list_table td:nth-child(3) {
+				padding: 0px;
+				width: 35px;
+			}
+
+			.selected img.flag {
+				content: url("flag.png");
+				position: relative;
+				top: 50%;
+				width: 16px;
+			}	
+
+			.my_button {
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+				background-color: #529ecc;
+				margin-bottom: 30px;
+			}
+
+			.my_label {
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				border-radius: 0;
+			}	
+
+			.nav-tabs a {
+				background-color: rgba(200, 200, 200, 0.8);
+			}
+
+			.dialog_names {
+				font-size: 11px;
+				color: #2B587A;
+			}
+
+			.dialog_content {
+				font-size: 11px;
+			}
+
+			.avatar {
+				display: inline-block;
+				height: auto;
+				max-width: 100%;
+				padding: 4px;
+				line-height: 1.428571429;
+				background-color: #fff;
+				-webkit-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+				border-radius: 50%;
+			}
+
+			.img-thumbnail {
+				border-radius: 0;
+			}
+
+			.vk_loading {
+				text-align: center;
+			}
+
+			.msg-area {
+				display: block;
+				width: 100%;
+				max-width: 100%;
+				height: 34px;
+				padding: 6px 12px;
+				font-size: 14px;
+				line-height: 1.428571429;
+				color: #555;
+				vertical-align: middle;
+				background-color: #fff;
+				border-radius: 0px;
+				border: none;
+				overflow: auto;
+				outline: none;
+				margin-bottom: 20px;
+				-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+				transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			}
+
+			.fixed {
+				position: fixed;
+				right: 0;
+			}
+
+		</style>
+	</head>
+<body>
+	<div class="container" id="error_message" style="margin-top: 30px; display:none">
+	</div>
+
+	<div class="container" style="padding-top: 10px" id="main_content">
+		<div id="error_message" style="display: none"></div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="container">
+					<!-- Image -->
+					<div class="row">
+						<div id="loader_image_wrapper" style="padding-top: 20px">
+							<div class="vk_loading">
+								<img class="vk_progress" src="https://vk.com/images/upload.gif">
+							</div>
+						</div>
+						<div class="container" style="">
+							<img src="" alt="Image" class="img-thumbnail" style="width: 100%; display: none;" id="photo_image">
+						</div>
+					</div>
+					<!-- Message text -->
+					<div class="row" style="padding-top: 10px">
+						<textarea class="msg-area" rows="3" placeholder="Введите текст сообщения" id="message_text"></textarea>
+					</div>
+					<!-- Send button -->
+					<div class="row pull-right" style="padding-top: 10px">
+						<button type="button" class="btn btn-primary my_button" id="send_button">
+							Отправить
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 fixed">
+				<div style="width: 85%; margin-left: 20px; margin-bottom: -1px;">
+					<ul class="nav nav-tabs" id="list_navigation_tabs">
+					</ul>
+				</div>
+
+				<div class="panel panel-default" id="dialogs_panel">
+					<div class="panel-body" style="padding: 0px">
+						<!-- dialogs load indicator -->
+						<div id="loader_dialogs_wrapper" style="padding-top: 20px">
+							<div class="vk_loading">
+								<img class="vk_progress" src="https://vk.com/images/upload.gif">
+							</div>
+						</div>
+						<!-- dialogs list -->
+						<div style="height: 480px; overflow-y: scroll" id="dialogs_list_wrapper">
+							<div class="table-responsive table-bordered" style="border: none;">
+								<table class="table table-striped table-hover list_table" id="dialogs_list">
+									<tbody>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
