@@ -1,0 +1,1 @@
+![Share window preview](http://i.imgur.com/xZqCoYz.png)
